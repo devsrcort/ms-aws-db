@@ -35,7 +35,7 @@ variable "env_name" {
 variable "mysql_user" {
   description = "The mysql user id that will be set for the RDS database instance"
   type        = string
-  default     = "src_client"
+  default     = "srt_client"
 }
 
 variable "mysql_password" {
@@ -46,7 +46,7 @@ variable "mysql_password" {
 variable "mysql_database" {
   description = "The name of the RDS database instance"
   type        = string
-  default     = "src_client_db"
+  default     = "srt_client_db"
 }
 
 variable "route53_id" {
