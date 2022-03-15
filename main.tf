@@ -43,7 +43,7 @@ resource "aws_db_instance" "mysql-db" {
   engine_version    = "5.7"
   instance_class    = "db.t2.micro"
   name              = var.mysql_database
-  identifier        = "microservices-mysql"
+  identifier        = var.mysql_identifier
 
   username             = var.mysql_user
   password             = var.mysql_password
@@ -62,7 +62,7 @@ resource "aws_elasticache_subnet_group" "redis-subnet-group" {
 }
 
 resource "aws_elasticache_cluster" "redis-db" {
-  cluster_id           = "microservices-redis"
+  cluster_id           = var.redis_cluster_id
   engine               = "redis"
   node_type            = "cache.m4.large"
   num_cache_nodes      = 1

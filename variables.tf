@@ -53,3 +53,15 @@ variable "route53_id" {
   description = "The ID of the Route 53 resource for this VPC. Needed so a DNS record for the RDS instance can be added."
   type        = string
 }
+
+variable "mysql_identifier" {
+  description = "The name of the RDS database identifier"
+  type        = string
+  default     = "microservices-mysql" 
+}
+
+variable "redis_cluster_id" {
+  description = "The name of the REDIS database identifier"
+  type        = string
+  default     = "microservices-redis" 
+}
