@@ -61,18 +61,18 @@ resource "aws_elasticache_subnet_group" "redis-subnet-group" {
   subnet_ids = ["${var.subnet_a_id}", "${var.subnet_b_id}"]
 }
 
-resource "aws_elasticache_cluster" "redis-db" {
-  cluster_id           = var.redis_cluster_id
-  engine               = "redis"
-  node_type            = "cache.m4.large"
-  num_cache_nodes      = 1
-  parameter_group_name = "default.redis3.2"
-  engine_version       = "3.2.10"
-  port                 = 6379
+# resource "aws_elasticache_cluster" "redis-db" {
+#   cluster_id           = var.redis_cluster_id
+#   engine               = "redis"
+#   node_type            = "cache.m4.large"
+#   num_cache_nodes      = 1
+#   parameter_group_name = "default.redis3.2"
+#   engine_version       = "3.2.10"
+#   port                 = 6379
 
-  subnet_group_name  = aws_elasticache_subnet_group.redis-subnet-group.name
-  security_group_ids = [aws_security_group.db-security-group.id]
-}
+#   subnet_group_name  = aws_elasticache_subnet_group.redis-subnet-group.name
+#   security_group_ids = [aws_security_group.db-security-group.id]
+# }
 
 # Setup a Route53 DNS entry for RDS routing
 data "aws_route53_zone" "private-zone" {

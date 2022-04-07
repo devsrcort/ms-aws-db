@@ -60,8 +60,8 @@ variable "mysql_identifier" {
   default     = "microservices-mysql" 
 }
 
-variable "redis_cluster_id" {
-  description = "The name of the REDIS database identifier"
-  type        = string
-  default     = "microservices-redis" 
-}
+# variable "redis_cluster_id" {
+#   description = "The name of the REDIS database identifier"
+#   type        = string
+#   default     = "microservices-redis" 
+# }
